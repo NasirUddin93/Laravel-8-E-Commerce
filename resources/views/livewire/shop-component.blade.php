@@ -25,17 +25,15 @@
 						<div class="wrap-right">
 
 							<div class="sort-item orderby ">
-								<select name="orderby" class="use-chosen" >
-									<option value="menu_order" selected="selected">Default sorting</option>
-									<option value="popularity">Sort by popularity</option>
-									<option value="rating">Sort by average rating</option>
+								<select name="orderby" class="use-chosen" wire:model="sorting" >
+									<option value="default" selected="selected">Default sorting</option>
 									<option value="date">Sort by newness</option>
 									<option value="price">Sort by price: low to high</option>
 									<option value="price-desc">Sort by price: high to low</option>
 								</select>
 							</div>
 
-							<div class="sort-item product-per-page">
+							<div class="sort-item product-per-page" wire:model="pagesize">
 								<select name="post-per-page" class="use-chosen" >
 									<option value="12" selected="selected">12 per page</option>
 									<option value="16">16 per page</option>
@@ -91,7 +89,7 @@
 							<li><a class="page-number-item" href="#" >3</a></li>
 							<li><a class="page-number-item next-link" href="#" >Next</a></li>
 						</ul>
-						<p class="result-count">Showing 1-8 of 12 result</p>
+						<p class="result-count">Showing 1-{{ $pagesize }} of 22 result</p>
 					</div>
 				</div><!--end main products area-->
 
