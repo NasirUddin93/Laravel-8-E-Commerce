@@ -14,6 +14,9 @@
                     <div class="panel-heading">
                         All Categories
                     </div>
+                    <div class="col-md-12">
+                        <a href="{{ route('admin.addcategory') }}" class="btn btn-success pull-right">Add New</a>
+                    </div>
                     <div class="panel-body">
                         <table class="table table-striped">
                             <thead>
