@@ -16,7 +16,7 @@
                     <div class="panel-body">
                         <div class="panel-body">
                             @if (Session::has('message'))
-                                <div class="alert alert-success" role="alert">{{ Session::get('messsage') }}</div>                                
+                                <div class="alert alert-success" role="alert"><p>{{ Session::get('messsage') }}</p></div>                                
                             @endif
                         </div>
                         <form class="form-horizontal" wire:submit.prevent="storeCategory">
