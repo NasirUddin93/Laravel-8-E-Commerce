@@ -16,7 +16,7 @@
                     <div class="panel-body">
                         <div class="panel-body">
                             @if (Session::has('message'))
-                                <div class="alert alert-success" role="alert">{{ Session::get('messsage') }}</div>                                
+                                <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>                                
                             @endif
                         </div>
                         <form class="form-horizontal" wire:submit.prevent="UpdateCategory">
@@ -24,12 +24,14 @@
                                 <label class="col-md-4 control-label">Category Name</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Category Name" class="form-control input-md" wire:model="name" wire:keyup="generateslug">
+                                    @error('name') <p class="text-danger">{{ $message }}</p> @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Category Slug</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Category Slug" class="form-control input-md" wire:model="slug">
+                                    @error('slug') <p class="text-danger">{{ $message }}</p> @enderror
                                 </div>
                             </div>
                             <div class="form-group">
